@@ -1,7 +1,7 @@
 Kuku
 ====
 
-A PHP package mainly developed for Laravel to generate link not escaping text.
+A PHP package mainly developed for Laravel to generate HTML tag that has raw text.
 
 Installation&setting for Laravel
 ====
@@ -10,18 +10,34 @@ After installation using composer, add the followings to the array in  app/confi
 
     'providers' => array(  
         ...Others...,  
-        'Sukohi\Kuku\KukuServiceProvider'  
+        'Sukohi\Kuku\KukuServiceProvider',
     )
 
 Also
 
     'aliases' => array(  
         ...Others...,  
-        'Sukohi\Kuku\Facades\Kuku'
+        'Kuku' => 'Sukohi\Kuku\Facades\Kuku',
     )
 
 Usage
 ====
 
-    echo Kuku::rawLink('home/test', 'test<br>test');
-    echo Kuku::rawLinkRoute('route.name', 'test<br>test');
+**Label**
+
+    {{ Kuku::label('name', '<i class="fa fa-home"></i> LABEL') }} 
+**Label with options**
+
+    {{ Kuku::label('name', '<i class="fa fa-home"></i> LABEL', ['class' => 'text-danger']) }}
+**Link**  
+
+    {{ Kuku::link('url', '<i class="fa fa-home"></i> TEXT') }}
+**Link with attributes**  
+
+    {{ Kuku::link('url', '<i class="fa fa-home"></i> TEXT', ['class' => 'text-danger']) }} 
+**Link Route**  
+
+    {{ Kuku::linkRoute('home.kuku', '<i class="fa fa-home"></i> TEXT') }}
+**Link Route with parameters and attributes**  
+
+    {{ Kuku::linkRoute('home.kuku', '<i class="fa fa-home"></i> TEST', [$id], ['class' => 'text-danger']) }}
