@@ -1,7 +1,7 @@
 Kuku
 ====
 
-A PHP package mainly developed for Laravel to generate HTML tag that has raw text.
+A PHP package mainly developed for Laravel to generate HTML tags that have raw text.
 
 Installation&setting for Laravel
 ====
@@ -40,4 +40,4 @@ Usage
     {{ Kuku::linkRoute('home.kuku', '<i class="fa fa-home"></i> TEXT') }}
 **Link Route with parameters and attributes**  
 
-    {{ Kuku::linkRoute('home.kuku', '<i class="fa fa-home"></i> TEST', [$id], ['class' => 'text-danger']) }}
+    {{ Kuku::linkRoute('home.kuku', '<i class="fa fa-home"></i> TEXT', [$id], ['class' => 'text-danger']) }}
